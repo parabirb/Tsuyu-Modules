@@ -45,7 +45,7 @@ async function weather({ city }) {
     // get weather
     let { current } = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,is_day,precipitation,weather_code,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto`).then(res => res.json());
     // return
-    let weather = `The weather is currently ${weatherStatesEnum[current.weather_code]} in ${city}. It is ${current.temperature_2m} degrees fahrenheit, and there are ${current.precipitation} inches of precipitation. The wind speed is ${current.wind_speed_10m} mph. Additionally, the current time in ${city} is ${current.time}.`;
+    let weather = `The weather is currently ${weatherStatesEnum[current.weather_code]} in ${city}. It is ${current.temperature_2m} degrees fahrenheit, and there are ${current.precipitation} inches of precipitation. The wind speed is ${current.wind_speed_10m} mph.`;
     console.log(weather);
     return weather;
 }
