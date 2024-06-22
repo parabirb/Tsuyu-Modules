@@ -1,6 +1,6 @@
 // deps
 import { v2 } from "@google-cloud/translate";
-import config from "./config.json" assert { type: "json" };
+import config from "./config.json" with { type: "json" };
 
 const translate = new v2.Translate({
     projectId: config.translateProject,
